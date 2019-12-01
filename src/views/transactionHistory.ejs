@@ -1,0 +1,46 @@
+<% include partials/header.ejs %>
+<div class="table-wrapper">
+  <% if (transactions.length > 0) {%>
+<style>
+  .tableData{
+  color:black;
+}
+  </style>
+<a href="/transactions">Back to Transactions</a>
+  <!-- View training transactions-->
+    <body>
+    <table class="table table-hovered">
+      <thead class="thead-dark">
+        <!-- Display columns for transaction-->
+      <tr>
+        <th>Transaction ID</th>
+        <th>Employee No</th>
+        <th>Customer Email</th>
+        <th>Time</th>
+        <th>Date</th>
+        <th>Product No</th>
+        <th>Total</th>
+      </tr>
+      </thead>
+      <!-- Add booked  transactions to table -->
+      <tbody>
+      <% transactions.forEach((transaction, index) => { %>
+        <tr>
+          <th scope="row" class="tableData"><%= transaction.transactionID %></th>
+          <td class="tableData"><%= transaction.employeeID %></td>
+          <td class="tableData"><%= transaction.customerEmail %></td>
+          <td class="tableData"><%= transaction.tTime %></td>
+          <td class="tableData"><%= transaction.tDate %></td>
+          <td class="tableData"><%= transaction.productNo %></td>
+          <td class="tableData"><%= transaction.totalPrice %></td>
+        </tr>
+      <% }) %>
+      </tbody>
+    </table>
+  <% } else { %>
+    <a href="/transactions">Back to Transactions</a>
+  <% } %>
+</div>
+</div>
+</body>
+</html>

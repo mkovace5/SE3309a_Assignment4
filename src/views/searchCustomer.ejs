@@ -1,0 +1,55 @@
+<% include partials/header.ejs %>
+<div class="table-wrapper">
+    <a href="/customers">Back to Customers</a>
+    <h2>Customer Info</h2>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+  
+    <form method="post">
+        <label for="customerEmail">Customer Email </label>
+        <input type="text" id="customerEmail" name="customerEmail">
+        <input type="submit" name="submit" value="View Results">
+    </form>
+  <% if (customers.length > 0) {%>
+<style>
+  .tableData{
+  color:black;
+}
+  </style>
+  
+
+  <!-- View training sessions-->
+    <body>
+    <table class="table table-hovered">
+      <thead class="thead-dark">
+        <!-- Display columns for session-->
+        <h2>Results</h2>
+        <blockquote>All Customer Info for this Customer Email</blockquote>
+      <tr>
+        <th scope="col">Customer Email</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Employee Sales Person</th>
+
+      </tr>
+      </thead>
+      <!-- Add booked  sessions to table -->
+      <tbody>
+      <% customers.forEach((cust, index) => { %>
+        <tr>
+          <th scope="row" class="tableData"><%= cust.customerEmail %></th>
+          <td class="tableData"><%= cust.fName %></td>
+          <td class="tableData"><%= cust.lName %></td>
+          <td class="tableData"><%= cust.cPhone %></td>
+          <td class="tableData"><%= cust.employeeID %></td>
+        </tr>
+      <% }) %>
+      </tbody>
+    </table>
+  <% } else { %>
+    <blockquote>No results found for transactions.customerEmail</blockquote>
+  <% } %>
+</div>
+</div>
+</body>
+</html>

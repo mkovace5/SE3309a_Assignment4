@@ -1,0 +1,36 @@
+
+<% include partials/header.ejs %>
+<html>
+    <head>
+    <title>Login</title>
+
+    
+    </head>
+    <body id="body_bg">
+    <div <div align="center">
+    
+    <h3>Login</h3>
+    <% if (message != '') { %> <% if (message == "Succesfully Logged In") { %> <p class="text-center text-success"><%= message %> as <%= employees[0].fName %></p><% } else {%>
+        <p class="text-center text-danger"><%= message %></p>
+        <% } }%>
+        <form id="login-form" method="post">
+            <table border="0.5" >
+                <tr>
+                    <td><label for="employeeID">Employee ID</label></td>
+                    <td><input type="text" name="employeeID" id="employeeID"></td>
+                </tr>
+                <tr>
+                    <td><label for="ePassword">Password</label></td>
+                    <td><input type="password" name="ePassword" id="ePassword"></input></td>
+                </tr>
+                
+                <tr>
+                    
+                    <td><input type="submit" value="Submit" />
+                    
+                </tr>
+            </table>
+        </form>
+            </div>
+    </body>
+    </html>

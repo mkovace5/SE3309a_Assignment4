@@ -1,0 +1,40 @@
+<% include partials/header.ejs %>
+<div class="col-sm-4">
+    <span class="glyphicon glyphicon-off logo-small"></span>
+</div>
+  
+<div class="container-fluid text-center">
+<h2>SERVICES</h2>
+<h4>What we offer</h4>
+<br>
+<% if (message != '') { %>
+  <p class="text-center text-danger"><%= message %></p>
+  <% } %>
+<div class="row">
+  <div class="col-sm-4">
+    <span class="glyphicon glyphicon-heart logo-small"></span>
+    <h4><a href="/products">PRODUCT INFO</a></h4>
+  </div>
+  <div class="col-sm-4">
+    <span class="glyphicon glyphicon-lock logo-small"></span>
+    <h4><a href="/customers">CUSTOMER INFO</a></h4>
+  </div>
+  <div class="col-sm-4">
+      <span class="glyphicon glyphicon-lock logo-small"></span>
+      <h4><a href="/employees">EMPLOYEE INFO</a></h4>
+    </div>
+  <div class="col-sm-4">
+    <span class="glyphicon glyphicon-leaf logo-small"></span>
+    <h4><a href="/transactions">TRANSACTIONS</a<</h4>
+  </div>
+</div>
+<br><br>
+</div>
+
+</body>
+</html>
+
+<link rel="stylesheet" type="text/css" href="./css/style.css">
+</div>
+</body>
+</html>
